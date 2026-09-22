@@ -10,7 +10,7 @@ if [ -z "$1" ]; then
 fi
 
 PACKAGE_NAME="$1"
-REPO="../$PACKAGE_NAME/" 
+REPO="../../$PACKAGE_NAME/" 
 UNIOS_REPO="../../unios-pkgs/"
 PACKAGE_DEST="../unios-pkgs/packages/x86_64/"
 
