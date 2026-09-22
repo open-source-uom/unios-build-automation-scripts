@@ -10,9 +10,9 @@ if [ -z "$1" ]; then
 fi
 
 PACKAGE_NAME="$1"
-REPO="../../$PACKAGE_NAME/" 
-UNIOS_REPO="../unios-pkgs/"
-PACKAGE_DEST="../unios-pkgs/packages/x86_64/"
+REPO="~/$PACKAGE_NAME/" 
+UNIOS_REPO="~/unios-pkgs/"
+PACKAGE_DEST="~/unios-pkgs/packages/x86_64/"
 
 # Fetching new versions
 cd $REPO
