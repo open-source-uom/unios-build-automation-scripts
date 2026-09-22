@@ -34,4 +34,4 @@ mv *zst $PACKAGE_DEST
 
 echo "=== Updating repo ===" 
 cd $UNIOS_REPO 
-./update_repo_server.sh
+./update-repo-server.sh
