@@ -18,11 +18,7 @@ PACKAGE_DEST="../unios-pkgs/packages/x86_64/"
 cd $REPO
 
 echo "=== Pulling changes ==" 
-
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/githubKey
-
-git clone pull origin main
+git pull origin main
 
 echo "=== Removing old build files ===" 
 
