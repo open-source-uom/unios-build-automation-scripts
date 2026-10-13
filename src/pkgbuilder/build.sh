@@ -1,7 +1,7 @@
+#!/bin/bash
 #
 # Author: Apostolos Chalis 2026 <achalis@csd.auth.gr>
 #
-#!/bin/bash
 
 if [ -z "$1" ]; then
     echo "ERROR: No package name given"
