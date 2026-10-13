@@ -1,5 +1,5 @@
 #
-# Author: Apostolos Chalis 2025 <achalis@csd.auth.gr> 
+# Author: Apostolos Chalis 2026 <achalis@csd.auth.gr>
 #
 #!/bin/bash
 
@@ -10,28 +10,28 @@ if [ -z "$1" ]; then
 fi
 
 PACKAGE_NAME="$1"
-REPO="/home/pkgbuilder/$PACKAGE_NAME/" 
+REPO="/home/pkgbuilder/$PACKAGE_NAME/"
 UNIOS_REPO="/home/pkgbuilder/unios-pkgs/"
 PACKAGE_DEST="/home/pkgbuilder/unios-pkgs/packages/x86_64/"
 
 # Fetching new versions
 cd $REPO
 
-echo "=== Pulling changes ==" 
+echo "=== Pulling changes =="
 git pull origin main
 
-echo "=== Removing old build files ===" 
+echo "=== Removing old build files ==="
 
 # TODO: Adjust for C++ projects
 rm -rf dist/ pkg/
 rm *.zst
 
 echo "=== makepkg -s ==="
-makepkg -s 
+makepkg -s
 
 echo "=== Moving binary to unios-pkgs for upload ==="
 mv *zst $PACKAGE_DEST
 
-echo "=== Updating repo ===" 
-cd $UNIOS_REPO 
+echo "=== Updating repo ==="
+cd $UNIOS_REPO
 ./update-repo-server.sh
