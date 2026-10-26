@@ -26,4 +26,16 @@ git pull origin main
 
 echo "=== Starting to build ISO ==="
 sudo mkarchiso -v -w "$REPO/work" -o "$REPO/out" "$REPO/archlive"
+echo "=== Done building ISO ===\nThe UniOS ISO is available in out/"
 
+echo "=== Uploading ISO to the remote server ==="
+
+ISO_FILE=$(ls -t "$REPO/out/"*.iso | head -n 1)
+
+if [ -f "$ISO_FILE" ]; then
+    scp -i ~/.ssh/debServer "$ISO_FILE" debian@83.212.103.127:/var/www/downloads
+echo "=== Upload Complete! ==="
+else
+    echo "Error: ISO file not found to upload!"
+    exit 1
+fi
