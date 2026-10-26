@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 #
 # Author: Apostolos Chalis 2026 <achalis@csd.auth.gr>
 #
