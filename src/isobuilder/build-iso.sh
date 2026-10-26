@@ -4,8 +4,8 @@
 #
 
 echo "=== WARNING ===" 
-echo "The produced ISO file will be available to the public" 
-echo "If you are just testing or messing around abort in the next five seconds" 
+echo "The produced ISO file will be available to the remote server" 
+echo "If you want to make the ISO available to the users you need to login to the debserver and move the ISO to the serving directory" 
 echo "5s couting now..." 
 sleep 1
 echo "4s.." 
@@ -33,7 +33,7 @@ echo "=== Uploading ISO to the remote server ==="
 ISO_FILE=$(ls -t "$REPO/out/"*.iso | head -n 1)
 
 if [ -f "$ISO_FILE" ]; then
-    scp -i ~/.ssh/debServer "$ISO_FILE" debian@83.212.103.127:/var/www/downloads
+    scp -i ~/.ssh/debServer "$ISO_FILE" debian@83.212.103.127:/home/debian
 echo "=== Upload Complete! ==="
 else
     echo "Error: ISO file not found to upload!"
